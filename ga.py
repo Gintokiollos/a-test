@@ -8,14 +8,16 @@ html.text
 html.content
 html.status_code
 if html.status_code ==200:
-    info3=(html.text)
-    pattern3=re.compile(r'(?<=、)\w+')
-    idiom=pattern3.findall(info3)
+    info1=(html.text)
+    pattern1=re.compile(r'(?<=、)\w+')
+    idiom=pattern1.findall(info1)
     gu=len(idiom)
     for i in range(gu):
         if  len(idiom[i]) == 4 and idiom[i] != '人学研究' :
             betrayal.append(idiom[i])
-    print(betrayal)
-
+    #print(betrayal)
+    pattern2=re.compile(r'(?<=【释义】)\w+')
+    Paraphrase=pattern2.findall(info1)
+    print(Paraphrase)
 else:
     print('連線不成功')
