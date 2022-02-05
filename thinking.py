@@ -12,10 +12,10 @@ if __name__ == '__main__':
     # 视频输出的位置
     path = input("下載位置:")
     download(url, path)
-videoclip = VideoFileClip(path)
+videoclip = VideoFileClip(path) #
 audioclip = videoclip.audio
 audioclip.write_audiofile(path)
 audioclip.close()
 videoclip.close()
-for infile in glob.glob(os.path.join(path,'*.srt')):
+for infile in glob.glob(os.path.join(path,'*.srt')): #找出垃圾並刪除
     os.remove(infile)
