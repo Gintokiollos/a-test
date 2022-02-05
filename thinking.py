@@ -17,10 +17,5 @@ audioclip = videoclip.audio
 audioclip.write_audiofile(path)
 audioclip.close()
 videoclip.close()
-srt_files = glob.glob('test_dir/*.srt')
-
-for py_file in srt_files:
-    try:
-        os.remove(py_file)
-    except OSError as e:
-        print(f"Error:{ e.strerror}")
+for infile in glob.glob(os.path.join(path,'*.srt')):
+    os.remove(infile)
